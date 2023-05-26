@@ -56,7 +56,7 @@ class SpaceShooter(arcade.Window):
         arcade.set_background_color(arcade.color.SKY_BLUE)
 
         # Setup the player
-        self.player = arcade.Sprite("images/jet.png", SCALING)
+        self.player = arcade.Sprite("klotski/images/jet.png", SCALING)
         self.player.center_y = self.height / 2
         self.player.left = 10
         self.all_sprites.append(self.player)
@@ -71,14 +71,14 @@ class SpaceShooter(arcade.Window):
         # Sound source: http://ccmixter.org/files/Apoxode/59262
         # License: https://creativecommons.org/licenses/by/3.0/
         self.background_music = arcade.load_sound(
-            "sounds/Apoxode_-_Electric_1.wav"
+            "klotski/sounds/Apoxode_-_Electric_1.wav"
         )
 
         # Load our other sounds
         # Sound sources: Jon Fincher
-        self.collision_sound = arcade.load_sound("sounds/Collision.wav")
-        self.move_up_sound = arcade.load_sound("sounds/Rising_putter.wav")
-        self.move_down_sound = arcade.load_sound("sounds/Falling_putter.wav")
+        self.collision_sound = arcade.load_sound("klotski/sounds/Collision.wav")
+        self.move_up_sound = arcade.load_sound("klotski/sounds/Rising_putter.wav")
+        self.move_down_sound = arcade.load_sound("klotski/sounds/Falling_putter.wav")
 
         # Start the background music
         arcade.play_sound(self.background_music)
@@ -96,7 +96,7 @@ class SpaceShooter(arcade.Window):
         """
 
         # First, create the new enemy sprite
-        enemy = FlyingSprite("images/missile.png", SCALING)
+        enemy = FlyingSprite("klotski/images/missile.png", SCALING)
 
         # Set its position to a random height and off screen right
         enemy.left = random.randint(self.width, self.width + 10)
@@ -116,7 +116,7 @@ class SpaceShooter(arcade.Window):
             delta_time {float} -- How much time has passed since the last call
         """
         # First, create the new cloud sprite
-        cloud = FlyingSprite("images/cloud.png", SCALING)
+        cloud = FlyingSprite("klotski/images/cloud.png", SCALING)
 
         # Set its position to a random height and off screen right
         cloud.left = random.randint(self.width, self.width + 10)
